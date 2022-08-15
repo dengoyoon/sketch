@@ -8,14 +8,18 @@ let x = 1;
 
 function draw() {
   context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-  //   context.save();
   context.beginPath();
-  context.arc(200, 200, 100, (pi / 2) * 3, (pi / 2) * 3 + x / 100, false);
-  context.stroke();
+  context.fillStyle = "blue";
+  context.arc(200, 200, 100, (pi / 2) * 3, (pi / 2) * 3 + x / 50, false);
+  context.fill();
+  context.closePath();
+  context.beginPath();
+  context.fillStyle = "white";
+  context.arc(200, 200, 40, (pi / 2) * 3, (pi / 2) * 3 + x / 50, false);
+  context.fill();
+  context.closePath();
 
-  //   context.translate(1, 0);
   x++;
-  //   context.restore();
 
   requestAnimationFrame(draw);
 }
